@@ -118,7 +118,7 @@ export default function ResultsPage() {
     "critical-low": "LL",
   };
 
-  const abnormalCount = params.filter((p) => p.flag && p.flag !== "normal" && p.flag !== "").length;
+  const abnormalCount = params.filter((p) => p.flag && p.flag !== "normal").length;
   const criticalCount = params.filter((p) => p.flag === "critical-high" || p.flag === "critical-low").length;
   const filledCount = params.filter((p) => p.value !== "").length;
 
