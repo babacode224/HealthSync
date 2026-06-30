@@ -60,7 +60,7 @@ export default function LabTestsPage() {
   const flagStyle = (f: string) => ({ normal: "text-secondary", high: "text-error font-bold", low: "text-tertiary font-bold", critical: "text-error font-bold bg-error-container/20" }[f] || "");
   const catLabel = (c: TestCategory) => ({ hematology: "Hematology", chemistry: "Chemistry", microbiology: "Microbiology", immunology: "Immunology", urinalysis: "Urinalysis" }[c]);
 
-  const counts = { received: orders.filter((o) => o.status === "received").length, processing: orders.filter((o) => o.status === "processing").length, completed: orders.filter((o) => o.status === "completed").length, flagged: orders.filter((o) => o.status === "flagged").length };
+  const counts: Record<string, number> = { received: orders.filter((o) => o.status === "received").length, processing: orders.filter((o) => o.status === "processing").length, completed: orders.filter((o) => o.status === "completed").length, flagged: orders.filter((o) => o.status === "flagged").length };
 
   const advanceStatus = (id: string) => {
     setOrders((prev) => prev.map((o) => {
